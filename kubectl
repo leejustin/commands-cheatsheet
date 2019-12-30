@@ -1,0 +1,28 @@
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+# Delete resource (service)
+kubectl delete service {service} -n {namespace}
+
+# List pods
+kubectl get pods -n {namespace}
+
+# Describe pod
+kubectl describe pod {pod_name} -n {namespace}
+
+# List services
+kubectl get services -n {namespace}
+
+# Update deployment
+kubectl edit deployment/{service_name} -n {namespace}
+
+# Connect to pod
+kubectl exec -it {pod_name} bash -n {namespace}
+
+# When connected to a pod, cURL a ClusterIP service to verify internal communication
+curl {service_name}.{namespace}:{port}
+
+# Show logs
+kubectl logs {pod_name} -n {namespace}
+
+# Show logs of specific container in pod
+kubectl logs {pod_name} {container_name} -n {namespace}
