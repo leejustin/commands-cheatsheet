@@ -24,5 +24,8 @@ curl {service_name}.{namespace}:{port}
 # Show logs
 kubectl logs {pod_name} -n {namespace}
 
+# Tail logs for a given pod
+kubectl logs --follow {pod_name} -n {namespace}
+
 # Show logs of specific container in pod
 kubectl logs {pod_name} {container_name} -n {namespace}
